@@ -1,0 +1,37 @@
+* {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+}
+#question-timer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+}
+#question-timer svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%) rotate(-90deg);
+}
+#question-timer .circle-animation {
+  stroke-dasharray: 125; /* this value is the pixel circumference of the circle (2*pi*r) */
+  stroke-dashoffset: 125;
+  transition: all 0.1s linear;
+}
+#question-timer:before {
+  content: attr(data-time);
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 22px;
+}
